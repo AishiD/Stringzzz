@@ -1,9 +1,10 @@
-import Image from "next/image";
+import {ClerkProvider, UserButton} from "@clerk/nextjs";
 
 export default function Home() {
   return (
-    <main>
-      <h1>Stringz</h1>
-    </main>
+    <ClerkProvider>
+      <h1 className="head-text text-left">Home</h1>
+      <UserButton afterSignOutUrl="/" />
+    </ClerkProvider>
   );
 }
