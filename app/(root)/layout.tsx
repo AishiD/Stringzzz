@@ -5,6 +5,7 @@ import Topbar from "@/components/shared/Topbar";
 import Bottombar from "@/components/shared/Bottombar";
 import RightSidebar from "@/components/shared/RightSidebar";
 import LeftSidebar from "@/components/shared/LeftSidebar";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <body className={inter.className}>
         <Topbar />
@@ -35,5 +37,6 @@ export default function RootLayout({
         <Bottombar />
         </body>
     </html>
+    </ClerkProvider>
   );
 }
