@@ -20,7 +20,7 @@ function LeftSidebar() {
             <Link
               href={link.route}
               key={link.label}
-              className={`leftsidebar_link $ {isActive && 'bg-primary-500'}`}
+              className={`leftsidebar_link ${isActive ? 'bg-primary-500' : ''}`}
             >
               <Image
                 src={link.imgURL}
@@ -35,7 +35,7 @@ function LeftSidebar() {
       </div>
       <div className="mt-10 px-6">
       <SignedIn>
-            <SignOutButton signOutCallback={()=>router.push('sign-in')}>
+            <SignOutButton signOutCallback={()=>router.push('/sign-in')}>
               <div className='flex cursor-pointer gap-4 p-4'>
                 <Image
                   src='/assets/logout.svg'
