@@ -1,3 +1,4 @@
+"use client"; // Ensure this is at the top of the file
 import { OrganizationSwitcher, SignedIn, SignOutButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
@@ -27,14 +28,16 @@ function Topbar() {
           </SignedIn>
         </div>
 
-        <OrganizationSwitcher
-          appearance={{
-            baseTheme: dark,
-            elements: {
-              organizationSwitcherTrigger: "py-2 px-4",
-            },
-          }}
-        />
+        <SignedIn>
+          <OrganizationSwitcher
+            appearance={{
+              baseTheme: dark,
+              elements: {
+                organizationSwitcherTrigger: "py-2 px-4",
+              },
+            }}
+          />
+        </SignedIn>
       </div>
     </nav>
   );
